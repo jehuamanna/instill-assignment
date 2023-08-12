@@ -301,6 +301,7 @@ const PulseSurvey = () => {
       sx={{
         padding: "30px",
         width: "42%",
+        background: "#FFFFFF",
         boxShadow:
           "0px 0px 2px 1px rgb(0 0 0 / 20%), 0px 1px 5px 0 rgb(0 0 0 / 19%)",
       }}

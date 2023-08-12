@@ -22,7 +22,7 @@ const StyledSearchBar = styled(SearchBar)(() => ({
   background: "red",
 }));
 
-const Circle = styledSC.div`
+export const Circle = styledSC.div`
 height: 25px;
   width: 25px;
   border-radius: 50%;

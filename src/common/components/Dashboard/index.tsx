@@ -4,6 +4,7 @@ import IntroGreetings from "./IntroGreetingsCard";
 import Box from "@mui/material/Box";
 import InstillSense from "./InstillSense";
 import PulseSurvey from "./PulseSurvery";
+import ActionSteps from "./ActionSteps";
 
 const Dashboard = () => {
   return (
@@ -25,6 +26,7 @@ const Dashboard = () => {
         <InstillSense />
         <PulseSurvey />
       </Box>
+      <ActionSteps />
     </Box>
   );
 };

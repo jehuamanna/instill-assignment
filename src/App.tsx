@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./common/components/Header";
+import SideBar from "./common/components/SideBar";
+import styled from "styled-components";
+import MainContext from "./common/context/mainContext";
+import { useMediaQuery } from "usehooks-ts";
+
+const Main = styled.div`
+  display: flex;
+  position: relative;
+`;
+
+const RightArea = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+`;
 
 function App() {
+  const initialValue = () => () => <>loading</>;
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  const [Component, setComponent] = React.useState(initialValue);
+  const [showSideBar, setShowSideBar] = React.useState(matches);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContext.Provider
+      value={{ setShowSideBar, showSideBar, Component, setComponent }}
+    >
+      <Main>
+        <SideBar />
+        <RightArea>
+          <Header />
+          <Component />
+        </RightArea>
+      </Main>
+    </MainContext.Provider>
   );
 }
 

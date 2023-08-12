@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 const IntroGreetings = () => {
   return (
     <>
-      <Box sx={{ marginLeft: "50px", marginTop: "30px" }}>
+      <Box>
         <Box sx={{ display: "flex", alignItems: "center", mb: "25px" }}>
           <img
             width="56px"

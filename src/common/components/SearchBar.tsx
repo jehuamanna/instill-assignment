@@ -20,7 +20,7 @@ const SearchBar = () => {
           width: "100%",
           borderRadius: "3px",
           boxShadow:
-            "0px 0px 2px 1px rgb(0 0 0 / 20%), 0px 1px 5px 0 rgb(0 0 0 / 19%)",
+            "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
         }}
         placeholder="Search"
         id="input-with-icon-adornment"

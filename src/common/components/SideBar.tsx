@@ -35,7 +35,7 @@ const LogoWrapper = styled.div`
 
 const IconLists = styled.div`
   width: 50px;
-  height: 100vh;
+  height: 100%;
   background: #111111;
   display: flex;
   flex-direction: column;

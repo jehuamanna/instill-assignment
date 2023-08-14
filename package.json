@@ -2,6 +2,7 @@
   "name": "assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jehuamanna.github.io/instill-assignment",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "gh-pages": "^6.0.0"
   }
 }

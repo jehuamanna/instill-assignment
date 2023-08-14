@@ -234,6 +234,7 @@ const ActionButton: React.FC<{ children: React.ReactNode }> = ({
         height: "40px",
         background: "#333333",
         borderRadius: "50px",
+        width: "180px",
       }}
       break-word
       variant="contained"

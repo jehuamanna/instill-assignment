@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/instill-assignment/static/css/main.b1bd5fc5.css",
+    "main.js": "/instill-assignment/static/js/main.1e6bf6a8.js",
+    "static/js/787.0420ccf9.chunk.js": "/instill-assignment/static/js/787.0420ccf9.chunk.js",
+    "static/media/SafeAndSecure.svg": "/instill-assignment/static/media/SafeAndSecure.7869c99b3cd045e1b84c1f0a25f9a4e0.svg",
+    "static/media/Group_51.svg": "/instill-assignment/static/media/Group_51.1c20904e56a3c9eeda4d510478391525.svg",
+    "static/media/NeedsAttention.svg": "/instill-assignment/static/media/NeedsAttention.ca6151ac0f2fc11baf541d37bc158730.svg",
+    "static/media/IntroGreetingsAppleLogo.svg": "/instill-assignment/static/media/IntroGreetingsAppleLogo.5bffb41b99932a900caa5a262a2568ba.svg",
+    "static/media/Group_49.svg": "/instill-assignment/static/media/Group_49.11f3f3241d6cc73b9b271f62588b97a4.svg",
+    "static/media/Group_52.svg": "/instill-assignment/static/media/Group_52.c672804e0095514834261da2bad9d195.svg",
+    "static/media/InstillSenseLogo.svg": "/instill-assignment/static/media/InstillSenseLogo.c27f9f6893a38e20adb8a2380fa2259d.svg",
+    "static/media/DashboardLogo.svg": "/instill-assignment/static/media/DashboardLogo.c137a1a2af381d765cd17f0a347cc03c.svg",
+    "index.html": "/instill-assignment/index.html",
+    "main.b1bd5fc5.css.map": "/instill-assignment/static/css/main.b1bd5fc5.css.map",
+    "main.1e6bf6a8.js.map": "/instill-assignment/static/js/main.1e6bf6a8.js.map",
+    "787.0420ccf9.chunk.js.map": "/instill-assignment/static/js/787.0420ccf9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1bd5fc5.css",
+    "static/js/main.1e6bf6a8.js"
+  ]
+}

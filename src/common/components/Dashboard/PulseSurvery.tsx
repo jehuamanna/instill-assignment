@@ -4,6 +4,52 @@ import Typography from "@mui/material/Typography";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { buildStyles } from "react-circular-progressbar";
+import { useMediaQuery } from "usehooks-ts";
+
+const ComponentWrapperTwo: React.FC<{
+  children: React.ReactNode;
+  danger: boolean;
+}> = ({ children, danger }) => {
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  return (
+    <Box
+      sx={{
+        padding: "20px",
+        borderRadius: "5px",
+        width: matches ? "38%" : "75%",
+        marginTop: "10px",
+        background: danger ? "#FF6E6E0F" : "inherit",
+
+        boxShadow:
+          "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const TypographyRemarks: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "600",
+        fontSize: "14px",
+        lineHeight: "19.6px",
+        color: "#666666",
+        marginBottom: "10px",
+        whiteSpace: "nowrap",
+        display: "inline-flex",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
 
 const ComponentOne = ({
   name,
@@ -11,22 +57,11 @@ const ComponentOne = ({
   value,
 }: {
   name: string;
-  remarks: string;
+  remarks: JSX.Element;
   value: number;
 }) => {
   return (
-    <Box
-      sx={{
-        padding: "20px",
-        borderRadius: "5px",
-        width: "38%",
-        marginTop: "10px",
-        background: value < 5 ? "#FF6E6E0F" : "inherit",
-
-        boxShadow:
-          "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
-      }}
-    >
+    <ComponentWrapperTwo danger={value < 5}>
       <Box
         sx={{
           display: "flex",
@@ -74,7 +109,7 @@ const ComponentOne = ({
         <Typography
           sx={{
             fontFamily: "Poppins",
-            fontWeight: "600",
+            fontWeight: "400",
             fontSize: "14px",
             lineHeight: "19.6px",
             color: value < 5 ? "#FF3B6B" : "#111111",
@@ -85,7 +120,7 @@ const ComponentOne = ({
           {remarks}
         </Typography>
       </Box>
-    </Box>
+    </ComponentWrapperTwo>
   );
 };
 
@@ -95,22 +130,11 @@ const ComponentTwo = ({
   value,
 }: {
   name: string;
-  remarks: string;
+  remarks: JSX.Element;
   value: number;
 }) => {
   return (
-    <Box
-      sx={{
-        padding: "20px",
-        borderRadius: "5px",
-        width: "38%",
-        marginTop: "10px",
-        background: value < 5 ? "#FF6E6E0F" : "inherit",
-
-        boxShadow:
-          "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
-      }}
-    >
+    <ComponentWrapperTwo danger={value < 5}>
       <Box
         sx={{
           display: "flex",
@@ -167,7 +191,7 @@ const ComponentTwo = ({
         <Typography
           sx={{
             fontFamily: "Poppins",
-            fontWeight: "600",
+            fontWeight: "400",
             fontSize: "14px",
             lineHeight: "19.6px",
             color: "#111111",
@@ -178,7 +202,7 @@ const ComponentTwo = ({
           {remarks}
         </Typography>
       </Box>
-    </Box>
+    </ComponentWrapperTwo>
   );
 };
 
@@ -188,22 +212,11 @@ const ComponentThree = ({
   value,
 }: {
   name: string;
-  remarks: string;
+  remarks: JSX.Element;
   value: number;
 }) => {
   return (
-    <Box
-      sx={{
-        padding: "20px",
-        borderRadius: "5px",
-        width: "38%",
-        marginTop: "10px",
-        background: value < 5 ? "#FF6E6E0F" : "inherit",
-
-        boxShadow:
-          "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
-      }}
-    >
+    <ComponentWrapperTwo danger={value < 5}>
       <Box>
         <Typography
           sx={{
@@ -253,7 +266,7 @@ const ComponentThree = ({
         <Typography
           sx={{
             fontFamily: "Poppins",
-            fontWeight: "600",
+            fontWeight: "400",
             fontSize: "14px",
             lineHeight: "19.6px",
             color: value < 5 ? "#FF3B6B" : "#111111",
@@ -264,7 +277,7 @@ const ComponentThree = ({
           {remarks}
         </Typography>
       </Box>
-    </Box>
+    </ComponentWrapperTwo>
   );
 };
 
@@ -272,82 +285,142 @@ const data = [
   {
     name: "eNPS Score",
     value: 54,
-    remarks: "Score is excellent",
+    remarks: (
+      <>
+        Score is <TypographyRemarks>&nbsp; excellent</TypographyRemarks>
+      </>
+    ),
     Component: ComponentOne,
   },
   {
     name: "Support from Manager",
     value: 7.5,
-    remarks: "Score > 7 is a Good one",
+    remarks: (
+      <>
+        Score &#62; 7 is a <TypographyRemarks>&nbsp;Good one</TypographyRemarks>
+      </>
+    ),
     Component: ComponentTwo,
   },
   {
     name: "Mission & Values Alignment",
     value: 60,
-    remarks: "Score is Average",
+    remarks: (
+      <>
+        Score is <TypographyRemarks>&nbsp;Average</TypographyRemarks>{" "}
+      </>
+    ),
     Component: ComponentThree,
   },
   {
     name: "Performance Feedback",
     value: 4.5,
-    remarks: "Need focus on this",
+    remarks: (
+      <>
+        <TypographyRemarks>Need focus&nbsp;</TypographyRemarks> on this
+      </>
+    ),
     Component: ComponentTwo,
   },
 ];
 
-const PulseSurvey = () => {
+const Card: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Box
       sx={{
         padding: "30px",
-        width: "42%",
+        // width: "42%",
         background: "#FFFFFF",
+        marginTop: "50px",
         boxShadow:
           "0px 0px 2px 1px rgb(0 0 0 / 20%), 0px 1px 5px 0 rgb(0 0 0 / 19%)",
       }}
     >
-      <Typography
-        sx={{
-          fontFamily: "Poppins",
-          fontWeight: "600",
-          fontSize: "16px",
-          lineHeight: "26px",
-          color: "#666666",
-          marginBottom: "10px",
-          whiteSpace: "nowrap",
-        }}
-      >
-        This month
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Poppins",
-          fontWeight: "500",
-          fontSize: "40px",
-          lineHeight: "42px",
-          color: "#333333",
-          marginTop: "10px",
-          whiteSpace: "nowrap",
-        }}
-      >
-        Pulse Survey
-      </Typography>
+      {children}
+    </Box>
+  );
+};
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <Box
-          sx={{
-            display: "flex",
+const WrapperOne: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
 
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+const WrapperTwo: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+
+        flexDirection: matches ? "row" : "column",
+        justifyContent: "space-between",
+        width: "100%",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const TypographyOne: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "600",
+        fontSize: "16px",
+        lineHeight: "26px",
+        color: "#666666",
+        marginBottom: "10px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const TypographyTwo: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "500",
+        fontSize: "40px",
+        lineHeight: "42px",
+        color: "#333333",
+        marginTop: "10px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const PulseSurvey = () => {
+  return (
+    <Card>
+      <TypographyOne>This month</TypographyOne>
+      <TypographyTwo>Pulse Survey</TypographyTwo>
+
+      <WrapperOne>
+        <WrapperTwo>
           {data.slice(0, 2).map((item) => {
             const { Component } = item;
             return (
@@ -358,14 +431,8 @@ const PulseSurvey = () => {
               />
             );
           })}
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
+        </WrapperTwo>
+        <WrapperTwo>
           {data.slice(2).map((item) => {
             const { Component } = item;
             return (
@@ -376,9 +443,9 @@ const PulseSurvey = () => {
               />
             );
           })}
-        </Box>
-      </Box>
-    </Box>
+        </WrapperTwo>
+      </WrapperOne>
+    </Card>
   );
 };
 

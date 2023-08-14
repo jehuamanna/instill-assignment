@@ -61,7 +61,10 @@ const Header = () => {
   return (
     <Box sx={{ display: "flex" }}>
       {!showSideBar ? (
-        <MenuIcon onClick={() => setShowSideBar(!showSideBar)} />
+        <MenuIcon
+          sx={{ margin: "auto" }}
+          onClick={() => setShowSideBar(!showSideBar)}
+        />
       ) : (
         <MenuIcon
           sx={{ visibility: "hidden" }}

@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import NeedsAttention from "../../assets/NeedsAttention.svg";
 import styledSC from "styled-components";
 import Button from "@mui/material/Button";
+import { useMediaQuery } from "usehooks-ts";
 
 const Circle = styledSC.div`
 height: 50px;
@@ -30,10 +31,11 @@ const data = [
   },
 ];
 
-const ActionSteps = () => {
+const Cards: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Box
       sx={{
+        width: "max-content",
         padding: "30px",
         background: "#FFFFFF",
         marginTop: "50px",
@@ -41,147 +43,247 @@ const ActionSteps = () => {
           "0px 0px 2px 1px rgb(0 0 0 / 20%), 0px 1px 5px 0 rgb(0 0 0 / 19%)",
       }}
     >
+      {children}
+    </Box>
+  );
+};
+
+const TypographyOne: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "600",
+        fontSize: "16px",
+        lineHeight: "26px",
+        color: "#666666",
+        whiteSpace: "nowrap",
+        textTransform: "uppercase",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const TypographyTwo: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "500",
+        fontSize: "40px",
+        lineHeight: "42px",
+        color: "#333333",
+        marginBottom: "10px",
+        marginTop: "20px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const TypographyThree: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "500",
+        fontSize: "16px",
+        lineHeight: "16px",
+        color: "#FF3B6B",
+        marginLeft: "5px",
+        whiteSpace: "nowrap",
+      }}
+    >
+      Needs attention
+    </Typography>
+  );
+};
+
+const WrapperOne: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const matches = useMediaQuery("(min-width: 480px)");
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: matches ? "row" : "column",
+        alignItems: "baseline",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const WrapperTwo: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <Box
+      sx={{
+        padding: "8px",
+        height: "15px",
+        borderRadius: "50px",
+        background: "#FF3B6B1A",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const ActionWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  return (
+    <Box
+      sx={{
+        padding: "10px 20px",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: matches ? "row" : "column",
+        borderRadius: "5px",
+        marginTop: "10px",
+        boxShadow:
+          "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const ActionTypographyWrapper: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: matches ? "row" : "column",
+        justifyContent: "space-between",
+        width: "100%",
+        alignItems: "center",
+      }}
+    >
+      {children}
+    </Box>
+  );
+};
+
+const ActionTypographyOne: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "600",
+        fontSize: "18px",
+        lineHeight: "25.2px",
+        margin: "10px",
+        color: "#333333",
+        wordWrap: "break-word",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const ActionTypographyTwo: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "400",
+        fontSize: "16px",
+        lineHeight: "22.4px",
+        color: "#333333",
+        margin: "10px",
+        wordWrap: "break-word",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const ActionButton: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Button
+      sx={{
+        height: "40px",
+        background: "#333333",
+        borderRadius: "50px",
+      }}
+      break-word
+      variant="contained"
+    >
+      {children}
+    </Button>
+  );
+};
+
+const NeedsAttentionImg: React.FC<{}> = () => {
+  return (
+    <img
+      width="14px"
+      height="auto"
+      src={NeedsAttention}
+      alt="needs attention"
+    />
+  );
+};
+
+const ActionSteps = () => {
+  const matches = useMediaQuery("(min-width: 480px)");
+
+  return (
+    <Cards>
       <Box>
-        <Typography
-          sx={{
-            fontFamily: "Poppins",
-            fontWeight: "600",
-            fontSize: "16px",
-            lineHeight: "26px",
-            color: "#666666",
-            whiteSpace: "nowrap",
-            textTransform: "uppercase",
-          }}
-        >
-          Advance your culture with
-        </Typography>
-        <Box
-          sx={{ display: "flex", flexDirection: "row", alignItems: "baseline" }}
-        >
-          <Typography
-            sx={{
-              fontFamily: "Poppins",
-              fontWeight: "500",
-              fontSize: "40px",
-              lineHeight: "42px",
-              color: "#333333",
-              marginBottom: "10px",
-              marginTop: "20px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Action Steps
-          </Typography>
-          <Box
-            sx={{
-              padding: "8px",
-              height: "15px",
-              borderRadius: "50px",
-              background: "#FF3B6B1A",
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-            }}
-          >
-            <img
-              width="14px"
-              height="auto"
-              src={NeedsAttention}
-              alt="needs attention"
-            />
-            <Typography
-              sx={{
-                fontFamily: "Poppins",
-                fontWeight: "500",
-                fontSize: "16px",
-                lineHeight: "16px",
-                color: "#FF3B6B",
-                marginLeft: "5px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Needs attention
-            </Typography>
-          </Box>
-        </Box>
+        <TypographyOne>Advance your culture with</TypographyOne>
+        <WrapperOne>
+          <TypographyTwo>Action Steps</TypographyTwo>
+          <WrapperTwo>
+            <NeedsAttentionImg />
+            <TypographyThree>Needs attention</TypographyThree>
+          </WrapperTwo>
+        </WrapperOne>
       </Box>
       {data.map((item) => (
-        <Box
-          sx={{
-            padding: "10px 20px",
-            display: "flex",
-            flexDirection: "row",
-            borderRadius: "5px",
-            boxShadow:
-              "0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 1px 1px rgb(0 0 0 / 19%)",
-          }}
-        >
+        <ActionWrapper>
           <Circle />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "100%",
-              alignItems: "center",
-            }}
-          >
-            <Box>
-              <Typography
-                sx={{
-                  fontFamily: "Poppins",
-                  fontWeight: "600",
-                  fontSize: "18px",
-                  lineHeight: "25.2px",
-                  margin: "10px",
-                  color: "#333333",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {item.sentenceOne}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Poppins",
-                  fontWeight: "400",
-                  fontSize: "16px",
-                  lineHeight: "22.4px",
-                  color: "#333333",
-                  margin: "10px",
-
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {item.sentenceTwo}
-              </Typography>
+          <ActionTypographyWrapper>
+            <Box sx={{ width: !matches ? "200px" : "100%" }}>
+              <ActionTypographyOne>{item.sentenceOne}</ActionTypographyOne>
+              <ActionTypographyTwo>{item.sentenceTwo}</ActionTypographyTwo>
             </Box>
-            <Button
-              sx={{
-                height: "40px",
-                background: "#333333",
-                borderRadius: "50px",
-              }}
-              variant="contained"
-            >
-              <Typography
-                sx={{
-                  fontFamily: "Poppins",
-                  fontWeight: "600",
-                  fontSize: "16px",
-                  lineHeight: "16.23px",
-                  color: "#FFFFFF",
-                  margin: "10px",
-
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Take Action
-              </Typography>
-            </Button>
-          </Box>
-        </Box>
+            <ActionButton>
+              <Typography>Take Action</Typography>
+            </ActionButton>
+          </ActionTypographyWrapper>
+        </ActionWrapper>
       ))}
-    </Box>
+    </Cards>
   );
 };
 

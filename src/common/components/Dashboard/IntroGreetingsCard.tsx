@@ -3,6 +3,61 @@ import IntroGreetingAppleLogo from "../../assets/IntroGreetingsAppleLogo.svg";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
+const TypographyOne: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "600",
+        fontSize: "16px",
+        lineHeight: "26px",
+        color: "#333333",
+        ml: "10px",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const TypographyTwo: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "500",
+        fontSize: "56px",
+        lineHeight: "62px",
+        color: "#333333",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
+const TypographyThree: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Typography
+      sx={{
+        fontFamily: "Poppins",
+        fontWeight: "500",
+        fontSize: "16px",
+        lineHeight: "22.4px",
+        color: "#888888",
+      }}
+    >
+      {children}
+    </Typography>
+  );
+};
+
 const IntroGreetings = () => {
   return (
     <>
@@ -14,42 +69,11 @@ const IntroGreetings = () => {
             src={IntroGreetingAppleLogo}
             alt="Apple logo"
           />
-          <Typography
-            sx={{
-              fontFamily: "Poppins",
-              fontWeight: "600",
-              fontSize: "16px",
-              lineHeight: "26px",
-              color: "#333333",
-              ml: "10px",
-            }}
-          >
-            Apple Culture Dashboard
-          </Typography>
+          <TypographyOne>Apple Culture Dashboard</TypographyOne>
         </Box>
         <Box>
-          <Typography
-            sx={{
-              fontFamily: "Poppins",
-              fontWeight: "500",
-              fontSize: "56px",
-              lineHeight: "62px",
-              color: "#333333",
-            }}
-          >
-            Hi, Tim
-          </Typography>
-          <Typography
-            sx={{
-              fontFamily: "Poppins",
-              fontWeight: "500",
-              fontSize: "16px",
-              lineHeight: "22.4px",
-              color: "#888888",
-            }}
-          >
-            CEO, Apple Inc
-          </Typography>
+          <TypographyTwo>Hi, Tim</TypographyTwo>
+          <TypographyThree>CEO, Apple Inc</TypographyThree>
         </Box>
       </Box>
     </>

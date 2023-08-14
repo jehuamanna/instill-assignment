@@ -10,7 +10,8 @@ const Dashboard = () => {
   return (
     <Box
       sx={{
-        margin: "auto",
+        // margin: "auto",
+        padding: "30px",
         marginBottom: "50px",
       }}
     >
@@ -19,8 +20,8 @@ const Dashboard = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          marginTop: "50px",
+
+          flexWrap: "wrap",
         }}
       >
         <InstillSense />

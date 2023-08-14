@@ -33,9 +33,13 @@ const LogoWrapper = styled.div`
   margin: 10px 0px 0px 0px;
 `;
 
+const LogoWrapperOne = styled.div`
+  margin: 10px 0px 100px 0px;
+`;
+
 const IconLists = styled.div`
   width: 50px;
-  height: 100%;
+  min-height: 100vh;
   background: #111111;
   display: flex;
   flex-direction: column;
@@ -92,14 +96,14 @@ const SideBar = () => {
                 </LogoWrapper>
               ))}
             </LogosContainer>
-            <LogoWrapper>
+            <LogoWrapperOne>
               <img
                 width="50px"
                 height="auto"
                 src={Group_52}
                 alt={"alternate_text5"}
               />
-            </LogoWrapper>
+            </LogoWrapperOne>
           </IconLists>
         </ClickAwayListener>
       ) : null}

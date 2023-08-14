@@ -40,6 +40,7 @@ const LogoWrapperOne = styled.div`
 const IconLists = styled.div`
   width: 50px;
   min-height: 100vh;
+  height: 100%;
   background: #111111;
   display: flex;
   flex-direction: column;

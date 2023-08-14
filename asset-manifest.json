@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/instill-assignment/static/css/main.b1bd5fc5.css",
-    "main.js": "/instill-assignment/static/js/main.51c5075f.js",
+    "main.js": "/instill-assignment/static/js/main.07cf311c.js",
     "static/js/787.0420ccf9.chunk.js": "/instill-assignment/static/js/787.0420ccf9.chunk.js",
     "static/media/SafeAndSecure.svg": "/instill-assignment/static/media/SafeAndSecure.7869c99b3cd045e1b84c1f0a25f9a4e0.svg",
     "static/media/Group_51.svg": "/instill-assignment/static/media/Group_51.1c20904e56a3c9eeda4d510478391525.svg",
@@ -13,11 +13,11 @@
     "static/media/DashboardLogo.svg": "/instill-assignment/static/media/DashboardLogo.c137a1a2af381d765cd17f0a347cc03c.svg",
     "index.html": "/instill-assignment/index.html",
     "main.b1bd5fc5.css.map": "/instill-assignment/static/css/main.b1bd5fc5.css.map",
-    "main.51c5075f.js.map": "/instill-assignment/static/js/main.51c5075f.js.map",
+    "main.07cf311c.js.map": "/instill-assignment/static/js/main.07cf311c.js.map",
     "787.0420ccf9.chunk.js.map": "/instill-assignment/static/js/787.0420ccf9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b1bd5fc5.css",
-    "static/js/main.51c5075f.js"
+    "static/js/main.07cf311c.js"
   ]
 }
